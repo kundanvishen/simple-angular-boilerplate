@@ -1,0 +1,66 @@
+<!--
+    * The MIT License (MIT)
+    * Copyright (c) 2017 Kundan Singh
+    * https://kundan.me
+ -->
+
+<!DOCTYPE html>
+<html ng-app="MyApp">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page Title</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation" bs-navbar>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+                Project
+                <strong>Name</strong></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li data-match-route="/$"><a href="/">Home</a></li>
+            <li data-match-route="/add"><a href="/add">More</a></li>
+        </ul>
+        <ul class="nav navbar-nav pull-right" ng-if="!currentUser">
+            <li data-match-route="/login"><a href="/login">Login</a></li>
+            <li data-match-route="/signup"><a href="/signup">Sign up</a></li>
+        </ul>
+        <ul class="nav navbar-nav pull-right" ng-if="currentUser">
+            <li class="navbar-text" ng-bind="currentUser.email"></li>
+            <li><a href="javascript:void(0)" ng-click="logout()">Logout</a></li>
+        </ul>
+    </div>
+    <!-- Navbar End-->
+
+    <div ng-view></div>
+
+    <!-- Include Vendor Files -->
+    <script src="vendor/angular.js"></script>
+    <script src="vendor/angular-strap.js"></script>
+    <script src="vendor/angular-strap.tpl.js"></script>
+    <script src="vendor/angular-messages.js"></script>
+    <script src="vendor/angular-resource.js"></script>
+    <script src="vendor/angular-route.js"></script>
+    <script src="vendor/angular-cookies.js"></script>
+    <script src="vendor/moment.min.js"></script>
+
+    <script src="app.js"></script>
+
+    <!-- Include All Controllers -->
+    <script src="controllers/main.js"></script>
+
+    <!-- Include All Services -->
+    <script src="services/awesomeService.js"></script>
+
+
+</body>
+
+</html>

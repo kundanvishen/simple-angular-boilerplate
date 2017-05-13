@@ -1,0 +1,23 @@
+// Import Font
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
+$icon-font-path: '../fonts/';
+// Initialize color variables
+$body-bg: #e4e7ec;
+$text-muted: #90939a;
+$link-color: #000;
+// import bootstrap files
+@import 'bootstrap/bootstrap';
+body {
+    padding-bottom: 20px;
+}
+
+.navbar-nav {
+    float: left;
+    margin: 0;
+    >li {
+        float: left;
+        >a {
+            padding: 15px;
+        }
+    }
+}
